@@ -44,24 +44,25 @@ function formSubmission(document, list, pilot, copilot, fuelLevel, cargoLevel) {
             alert("Pilot & Copilot should have names, Fuel level & Cargo Level should be numeric!")
         } else {
         list.style.visibility = "visible";
+        //template literals "$(`blah blah blah`)" to list pilots names with id, and .innerHTML
         pilotStatus.innerHTML = `Pilot ${pilot} is ready for launch`;
         copilotStatus.innerHTML = `Co-pilot ${copilot} is ready for launch`;
         let launchStatus = document.getElementById("launchStatus");
         if (fuelLevel < 10000 && cargoLevel <= 10000) {
             fuelStatus.innerHTML = "Fuel level too low for launch";
             cargoStatus.innerHTML = "Cargo mass low enough for launch"
-            launchStatus.innerHTML = "Shuttle Not Ready for Launch";
-            launchStatus.style.color = "#C7254E";
+            launchStatus.innerHTML = "Shuttle not ready for launch";
+            launchStatus.style.color = "#7E3517";
         } else if (fuelLevel >= 10000 && cargoLevel > 10000) {
             fuelStatus.innerHTML = "Fuel level high enough for launch"
             cargoStatus.innerHTML = "Cargo mass too heavy for launch";
-            launchStatus.innerHTML = "Shuttle Not Ready for Launch";
-            launchStatus.style.color = "#C7254E";
+            launchStatus.innerHTML = "Shuttle not ready for launch";
+            launchStatus.style.color = "#7E3517";
         } else if (fuelLevel < 10000 && cargoLevel > 10000) {
             fuelStatus.innerHTML = "Fuel level too low for launch";
             cargoStatus.innerHTML = "Cargo mass too heavy for launch";
-            launchStatus.innerHTML = "Shuttle Not Ready for Launch";
-            launchStatus.style.color = "#C7254E";
+            launchStatus.innerHTML = "Shuttle not ready for launch";
+            launchStatus.style.color = "#7E3517";
         } else {
             fuelStatus.innerHTML = "Fuel level high enough for launch"
             cargoStatus.innerHTML = "Cargo mass low enough for launch"
